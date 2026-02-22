@@ -58,7 +58,7 @@ body{
 }
 @media (max-width:768px) {
    body{
-    /* background-image: url(pexels-resourceboy-13031767.jpg); */
+    background-image: url(pexels-resourceboy-13031767.jpg);
     height:100vh;
     margin: 0;
    } 
