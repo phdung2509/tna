@@ -20,7 +20,7 @@ body{
     padding: 20px 50px;
     text-align: center;
     align-items: center;
-    padding: 1% 8%;
+    padding: 2% 8%;
 }
 .logo a{
     color: aqua;
@@ -46,18 +46,19 @@ body{
 .toggle{
     display: none;
     flex-direction: column;
-    margin-top: 13px;
+    margin-top: 0;
     gap:9px;
+    
 }
 .toggle span{
-    width: 28px;
+    width: 30px;
     height: 3px;
     background: cyan;
     border-radius: 2px;
 }
 @media (max-width:768px) {
    body{
-    background-image: url(pexels-resourceboy-13031767.jpg);
+    /* background-image: url(pexels-resourceboy-13031767.jpg); */
     height:100vh;
     margin: 0;
    } 
@@ -71,13 +72,12 @@ body{
     width: 100%;
     left: 0;
     transition: 3s ease;
-    padding: 10px 0;
     
 }
 .nav li {
     white-space: nowrap;
     left:0;
-   
+    
     width: 10%;
     margin-left: 40px;
     padding: 0;
