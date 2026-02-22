@@ -16,7 +16,7 @@
         </div>
         <ul class="nav">
             <li><a class="trangchu" href="index.html">Trang chủ</a></li>
-            <li ><a class="about" href="#">Về tôi</a></li>
+            <li ><a class="about" href="#about">Về tôi</a></li>
             <li><a class="contact" href="#">Liên hệ</a></li>
         </ul>  
        
@@ -24,17 +24,99 @@
     </header>
     <div class="content">
       <div class="text">
-        <h2 class="text1">- Medical Technician -</h2>
+        <p class="text1">- Medical Technician -</p>
         <h1 class="text2">Xin chào,<h1>
             <h2 class="text3">tôi là Kỹ thuật viên</h2>
             <h1 class="text4">Y tế</h1>
-            <h5 class="text5">Tận tâm chăm sóc sức khỏe cộng đồng - chính xác, an toàn và chuyên nghiệp</h3>
+            <p class="text5">Tận tâm chăm sóc sức khỏe cộng đồng - chính xác, an toàn và chuyên nghiệp.</p>
         </div>
+    </div>
+    <div class="button" >
+        <a class="bt1" href="#about">
+            Về tôi
+        </a>
+        <a class="bt2" href="#contact">Liên hệ</a>
+    </div>
+    <div id="about">
+        <h3 style="text-align: center; font-size: 25px;">-  Về tôi  -</h3>
+        <img src="nhatanhxoanen.png" alt="hinhnen">
+        <p>Tôi là: Nhật Anh (Nenhhh)</p>
+        <p>Sinh ngày: 28/08/2005</p>
+        <p>Quê quán: Hà Nội</p>
+        <p>     - Tôi là một <span style="font-weight: bold;">Kỹ thuật viên Y tế</span> (Medical Technician) với niềm đam mê chăm sóc sức khỏe cộng đồng. Công việc của tôi là đảm bảo các kết quả xét nghiệm chính xác, hỗ trợ bác sĩ trong chẩn đoán và điều trị.</p>
+        <p>     - Với kinh nghiệm làm việc tại nhiều cơ sở y tế, tôi luôn đặt sự an toàn và chính xác lên hàng đầu. Mỗi mẫu xét nghiệm đều mang theo trách nhiệm với sức khỏe của bệnh nhân.</p>
+    </div>
+    <div>
+        <p class="tt"> 1+ năm kinh nghiệm làm việc<br>
+        <span style="font-size: 13px;color: rgb(45, 46, 46);">Làm việc tại các bệnh viện và phòng khám</span></p>
+    </div>
+    <section id="contact">
+    <div class="contact-container">
+        <h2>Liên hệ với tôi</h2>
+
+        <form action="https://formsubmit.co/phamhuudung25092005@gmail.com" method="POST">
+
+            <!-- chống spam -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- chuyển về lại trang sau khi gửi -->
+            <input type="hidden" name="_next" value="http://127.0.0.1:3000/index.html">
+
+            <input type="text" name="name" placeholder="Họ và tên" required>
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="tel" name="phone" placeholder="Số điện thoại">
+
+            <textarea name="message" placeholder="Nhập nội dung tin nhắn..." required></textarea>
+
+            <button type="submit" class="send-btn">Gửi tin nhắn</button>
+
+        </form>
+    </div>
+</section>
+<section class="contact-info">
+
+    <a href="https://zalo.me/0123456789" target="_blank" class="info-box">
+        <div class="icon">💬</div>
+        <div>
+            <h3>Chat Zalo</h3>
+            <p>Nhắn tin trực tiếp qua Zalo</p>
+        </div>
+    </a>
+
+    <a href="tel:0363212825" class="info-box">
+        <div class="icon">📞</div>
+        <div>
+            <h3>Gọi trực tiếp</h3>
+            <p>0363212825</p>
+        </div>
+    </a>
+
+    <a href="mailto:phamhuudung25092005@gmail@gmail.com" class="info-box">
+        <div class="icon">✉️</div>
+        <div>
+            <h3>Gửi Email</h3>
+            <p>phamhuudung25092005@gmail@gmail.com</p>
+        </div>
+    </a>
+
+    <div class="info-box static">
+        <div class="icon">⏰</div>
+        <div>
+            <h3>Giờ làm việc</h3>
+            <p>Thứ 2 – Thứ 6: 7:30 – 17:00</p>
+            <p>Thứ 7: 7:30 – 12:00</p>
+        </div>
+    </div>
+
+</section>
     </div>
     <script>
 function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
 }
+
 </script>
 </body>
 </html>
