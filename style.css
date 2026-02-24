@@ -479,7 +479,7 @@ header,
     padding: 40px 20px;
    
     text-align: center;
-    background: rgba(0,0,0,0.6);
+    background: black;
     backdrop-filter: blur(20px);
     color: white;
     overflow: hidden;
