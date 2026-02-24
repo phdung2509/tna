@@ -50,8 +50,9 @@
         <p class="tt"> 1+ năm kinh nghiệm làm việc<br>
         <span style="font-size: 13px;color: rgb(45, 46, 46);">Làm việc tại các bệnh viện và phòng khám</span></p>
     </div>
-    <h3 style="text-align: center; font-size: 25px;padding-top: 30px;">-  Liên hệ  -</h3>
+    
     <section id="contact">
+        <h3 style="text-align: center; font-size: 25px;padding-top: 0; position: absolute;top:-10%;right: 31%;">-  Liên hệ  -</h3>
     <div class="contact-container">
         
         <h2>Liên hệ với tôi</h2>
@@ -119,6 +120,20 @@ function toggleMenu(){
     document.querySelector(".nav").classList.toggle("active");
 }
 
+</script>
+<script>
+function toggleMenu(){
+    document.querySelector(".nav").classList.toggle("active");
+    document.querySelector(".toggle").classList.toggle("active");
+}
+
+/* TỰ ĐÓNG KHI BẤM LINK */
+document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.querySelector(".nav").classList.remove("active");
+        document.querySelector(".toggle").classList.remove("active");
+    });
+});
 </script>
 </body>
 </html>
