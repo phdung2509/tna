@@ -7,6 +7,9 @@
     <title>Nenhhh</title>
 </head>
 <body>
+    <div class="paper-plane">
+    ✈
+</div>
     <canvas id="bg3d"></canvas>
 <!-- PRELOADER -->
 <div id="preloader">
@@ -306,6 +309,34 @@ window.addEventListener("load", async () => {
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+    scene.add(particles);
+    // ===== PAPER PLANE =====
+const planeGeometry = new THREE.ConeGeometry(0.1, 0.5, 3);
+const planeMaterial = new THREE.MeshBasicMaterial({
+    color: 0x00f5ff,
+    wireframe: true
+});
+const trailGeometry = new THREE.BufferGeometry();
+const trailPositions = new Float32Array(300 * 3);
+trailGeometry.setAttribute(
+    'position',
+    new THREE.BufferAttribute(trailPositions, 3)
+);
+
+const trailMaterial = new THREE.LineBasicMaterial({
+    color: 0x00f5ff,
+    transparent: true,
+    opacity: 0.6
+});
+
+const trail = new THREE.Line(trailGeometry, trailMaterial);
+scene.add(trail);
+
+let trailIndex = 0;
+
+const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+plane.rotation.z = Math.PI / 2;
+scene.add(plane);
 const canvas = document.getElementById("bg3d");
 
 const scene = new THREE.Scene();
@@ -340,10 +371,39 @@ const particles = new THREE.Points(geometry, material);
 scene.add(particles);
 
 function animate(){
+   let direction = 1;
+
+function animate(){
     requestAnimationFrame(animate);
+
+    // ===== PLANE MOVE =====
+    plane.position.x += 0.02 * direction;
+    plane.position.y = Math.sin(plane.position.x) * 1;
+
+    // quay đầu khi ra khỏi màn hình
+    if(plane.position.x > 5 || plane.position.x < -5){
+        direction *= -1;
+        plane.rotation.z += Math.PI;
+    }
+
+    // ===== UPDATE TRAIL =====
+    const positions = trail.geometry.attributes.position.array;
+
+    positions[trailIndex * 3] = plane.position.x;
+    positions[trailIndex * 3 + 1] = plane.position.y;
+    positions[trailIndex * 3 + 2] = plane.position.z;
+
+    trailIndex++;
+    if(trailIndex >= 300) trailIndex = 0;
+
+    trail.geometry.attributes.position.needsUpdate = true;
+
+    // particle rotation cũ
     particles.rotation.y += 0.0005;
     particles.rotation.x += 0.0003;
+
     renderer.render(scene, camera);
+}
 }
 
 animate();
